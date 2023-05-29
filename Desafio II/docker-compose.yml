@@ -1,0 +1,17 @@
+services:
+  mysql:
+    build: ./db/
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'adventure'
+      MYSQL_ROOT_PASSWORD: '123456'
+    ports:
+      - '3307:3306'
+  
+  pythonapp:
+    build: ./app/
+    command: sh -c "sleep 40s && pytest /usr/app --cov && echo 'IMPORTANTE    Link para acessar a api http://127.0.0.1:8000/docs/' && uvicorn main:app --host 0.0.0.0 --port 8000"
+    depends_on:
+      - mysql
+    ports:
+      - '8000:8000'
