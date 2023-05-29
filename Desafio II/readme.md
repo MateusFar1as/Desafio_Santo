@@ -6,5 +6,6 @@ Criei a estrutura das rotas e as preenchi com as tarefas propostas. Após termin
 Em seguida, exportei o esquema do MySQL e comecei a configurar o Dockerfile tanto para o Python quanto para o MySQL. Então, fiz o docker-compose para utilizar os dois containers em conjunto.
 
 Para subir a API será usado o comando: docker-compose up
+O cooldown para executar os comandos do Python será de 40 segundos, que foi o tempo necessário na minha máquina até o MySQL estar propriamente funcionando. Portanto, caso demore um pouco para aparecer no terminal a execução do Python, peço que tenha paciência.
 Após o container estar levantado o swagger da API estara no http://localhost:8000/docs
-No terminal irá aparecer o porcentual da cobertura de testes
+No terminal irá aparecer o porcentual da cobertura de testes.
